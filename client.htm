@@ -184,7 +184,7 @@
 	   puntos = ( 10*(correctas / rastreos) ).toFixed(4) ;
 	   Puntos.innerHTML = puntos ;
 	   if (rastreos > cuantos) {
-	       alert("Lo has encontrado") ;
+	       alert("You found it!") ;
 	       comenzar() ;
 	   } else {
 
@@ -280,7 +280,7 @@
 	   // sitúe el barco de búsqueda bien dentro de alguno de los sectores;
 
 	   if (d1=="X" | d2=="X")
-	       alert("Por favor, sitúa el barco de búsqueda bien en alguno de los sectores.")
+	       alert("Please, place the search ship well inside one of the sectors.")
 
 	   // en otro caso, tomar nota del sector en que nos encontramos.
 
@@ -298,7 +298,7 @@
 
       <script>
        function myFunction() {
-	   var DNI = prompt("Tu nota será grabada. Puedes regresar cuantas veces quieras y sólo la última valdrá\nPor favor, introduce tu DNI", "00000000");
+	   var DNI = prompt("Your grade will be saved. Come as oftes as you wish; only your last grade will be preserved.\nPlease enter your ID number", "00000000");
 	   if (DNI != "00000000") {
 	       document.getElementById("demo").innerHTML =
 		   "Hello " + person + "! How are you today?";
@@ -349,9 +349,9 @@
 		   },
 		   onEachFeature: function( feature, layer ){
 		       layer.bindPopup( "<b>Sector:&nbsp" + feature.properties.name +
-					"<br/>Antes ultimo rastreo:</b> p = " +
+					"<br/>Before last search:</b> p = " +
 					feature.properties.apriori +
-					"<br><b>Último rastreo:</b> " + ultimo)
+					"<br><b>Last sector searched:</b> " + ultimo)
 		   } }
 	       ) ;
 	       sect.addTo(map) ;

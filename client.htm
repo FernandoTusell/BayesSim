@@ -30,7 +30,7 @@
   </head>
   <body>
     <P>
-      <B>&nbsp  Last search:    </B><I id="UltRastreo">aún ninguno</I>
+      <B>&nbsp  Last search:    </B><I id="UltRastreo">none as yet</I>
       <B>&nbsp  Searches:    </B><I id="Rastreos">0</I>
       <B>&nbsp  Correct:   </B><I id="Correctas">0</I>
       <B>&nbsp  Incorrect: </B><I id="Incorrectas">0</I>
@@ -286,7 +286,7 @@
 
 	   else
 	       ultimo = d1 + d2 ;
-	   document.getElementById("rastrear").value = "Rastrear " + ultimo ;
+	   document.getElementById("rastrear").value = "Search " + ultimo ;
        });
 
 
@@ -308,11 +308,11 @@
 
        function comenzar() {
 	   var aaa = document.getElementById('comienzo') ;
-	   if (aaa.value == 'Comenzar') {
+	   if (aaa.value == 'Start') {
 	       cuantos = Math.floor((20*Math.random())) ;
 	       bat.addTo(map);
 	       aaa.style.color = "blue" ;
-	       aaa.value = 'Finalizar' ;
+	       aaa.value = 'End' ;
 	       correctas.innerHTML = 0 ;
 	       incorrectas.innerHTML = 0 ;
 	       puntos.innerHTML = 0 ;
@@ -356,10 +356,10 @@
 	       ) ;
 	       sect.addTo(map) ;
 	   }
-	   else if (aaa.value == 'Finalizar') {
+	   else if (aaa.value == 'End') {
 	       myFunction() ;
 	       aaa.style.color = "black" ;
-	       aaa.value = 'Comenzar' ;
+	       aaa.value = 'Start' ;
 	       map.removeLayer(bat) ;
 	       // forzar la recarga de la página
 	       location.reload() ;

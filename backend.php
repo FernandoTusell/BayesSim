@@ -1,12 +1,11 @@
 <?php
-// get the q parameter from URL
 $q = $_REQUEST["q"];
-
-$fname = "z.txt" ;
-$file = fopen($fname, 'w');//creates new file
-fwrite($file, $q);
+$tmp = explode(",", $q) ;
+$dni      = $tmp[0] ;
+$grade    = $tmp[1] ;
+$fname    = "notas/" . $dni . ".nota" ;
+$file = fopen($fname, 'w');
+fwrite($file, $dni . ";" . date ( "d-m-Y H:i:s" , time() ) . ";" . $grade) ;
+fwrite($file, "\n") ;
 fclose($file);
-
-// Output "no suggestion" if no hint was found or output correct values
-echo $hint === "" ? "no suggestion" : $hint;
 ?>

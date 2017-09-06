@@ -203,6 +203,7 @@
 		   probs[i] = probs[i] / suma ;
 		   sectores.features[i].properties.apriori = ( oldprobs[i] ).toFixed(3) ;
 	       }
+
 	       // reemplazamos el reticulado de los sectores con otro nuevo
 
 	       map.removeLayer(sect)
@@ -249,6 +250,7 @@
        });
 
        // bat es global, por estar declarada sin "var"
+
        bat = L.marker([32.5, -41.0],{icon:batIcon, draggable: true})
 
        bat.on('click', function(e) {
@@ -297,13 +299,12 @@
       </div>
 
       <script>
-       function myFunction() {
-	   var DNI = prompt("Your grade will be saved. Come as oftes as you wish; only your last grade will be preserved.\nPlease enter your ID number", "00000000");
-	   if (DNI != "00000000") {
-	       document.getElementById("demo").innerHTML =
-		   "Hello " + person + "! How are you today?";
-	   }
-       }
+       function myFunction(str) {
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.open("GET", "backend.php?q=" + str, true);
+	xmlhttp.send();
+}
+
 
 
        function comenzar() {
@@ -357,7 +358,11 @@
 	       sect.addTo(map) ;
 	   }
 	   else if (aaa.value == 'End') {
-	       myFunction() ;
+	       myFunction()
+	   else if (aaa.value == 'End') {
+	       var DNI = prompt("Your last grade will be saved; you can come back as often as you want\nPlease enter your ID number", "00000000");
+	       var q = DNI;
+	       myFunction(DNI + ',' + puntos) ;
 	       aaa.style.color = "black" ;
 	       aaa.value = 'Start' ;
 	       map.removeLayer(bat) ;

@@ -193,7 +193,7 @@
 	       suma = 0 ;
 	       for (i=0; i < nsectores ; i++) {
 		   if (secnames[i] != ultimo) {
-		       probs[i] = oldprobs[i] / ( 1 - detectp*probs[i] ) ;
+		       probs[i] = oldprobs[i] / ( 1 - detectp*oldprobs[i] ) ;
 		   } else {
 		       probs[i] = ( (1 - detectp)*oldprobs[i] ) / ( 1 - detectp*oldprobs[i] )
 		   }

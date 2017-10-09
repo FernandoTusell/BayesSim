@@ -165,8 +165,17 @@
 
        function rastrear(ultimo) {
 
-	   var i = indexOfMax(probs) ;
-	   correcto = secnames[i] ;
+	  // encontrar índice del sector rastreado
+
+	  for (i=0; i < nsectores ; i++) {
+	      if (ultimo == secnames[i]) {
+		 k = i ;
+		 break ;
+	      }
+	  }
+
+	   var j = indexOfMax(probs) ;
+	   correcto = secnames[j] ;
 
 	   // actualiza los banners
 
@@ -192,9 +201,11 @@
 
 	       suma = 0 ;
 	       for (i=0; i < nsectores ; i++) {
-		   if (secnames[i] != ultimo) {
-		       probs[i] = oldprobs[i] / ( 1 - detectp*oldprobs[i] ) ;
-		   } else {
+		   if (i != k) {
+		       // si el sector no es el último rastreado...
+		       probs[i] = oldprobs[i] / ( 1 - detectp*oldprobs[k] ) ;
+	       } else {
+		       // en caso contrario...
 		       probs[i] = ( (1 - detectp)*oldprobs[i] ) / ( 1 - detectp*oldprobs[i] )
 		   }
 		   suma = suma + probs[i] ;

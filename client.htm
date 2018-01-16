@@ -2,7 +2,7 @@
   <!-- (C) F. Tusell, 2017. Licensed under GPL v 3.0 -->
   <head>
     <meta charset='utf-8'>
-    <title>Búsqueda del USS Scorpion</title>
+    <title>Search of  USS Scorpion</title>
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.6/interact.min.js">></script>
@@ -56,7 +56,7 @@
        var Rastreos    =  document.getElementById("Rastreos")
        var secnames    = [" ", " ", " ", " ", " ", " ", " ", " ", " "] ;
        var UltRastreo  =  document.getElementById("UltRastreo")
-       var ultimo      = "aún ninguno" ;
+       var ultimo      = "none as yet" ;
 
        // inicializar el mapa
 
@@ -237,9 +237,9 @@
 		   },
 		   onEachFeature: function( feature, layer ){
 		       layer.bindPopup( "<b>Sector:&nbsp" + feature.properties.name +
-					"<br/>Antes ultimo rastreo:</b> p = " +
+					"<br/>Before last search:</b> p = " +
 					feature.properties.apriori +
-					"<br><b>Último rastreo:</b> " + ultimo)
+					"<br><b>Last search:</b> " + ultimo)
 		   } }
 	       ) ;
 	       sect.addTo(map) ;

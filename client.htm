@@ -237,7 +237,7 @@
 		   },
 		   onEachFeature: function( feature, layer ){
 		       layer.bindPopup( "<b>Sector:&nbsp" + feature.properties.name +
-					"<br/>Before last search:</b> p = " +
+					"<br/>Prob before last search:</b>  " +
 					feature.properties.apriori +
 					"<br><b>Last search:</b> " + ultimo)
 		   } }
@@ -361,7 +361,7 @@
 		   },
 		   onEachFeature: function( feature, layer ){
 		       layer.bindPopup( "<b>Sector:&nbsp" + feature.properties.name +
-					"<br/>Before last search:</b> p = " +
+					"<br/>Prob before last search:</b>  " +
 					feature.properties.apriori +
 					"<br><b>Last sector searched:</b> " + ultimo)
 		   } }

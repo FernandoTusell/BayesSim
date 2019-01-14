@@ -1,0 +1,71 @@
+Instructions for deployment
+---------------------------
+
+1. Requirements
+
+ All that is required is a location that can be accessed via web. This
+can be a dedicated web server, part of it, or simply a public access
+folder of one teacher: in Unix/Linux machines, tipically something
+like:
+
+      /home/teacherlogin/public_html
+
+where 'teacherlogin' es the login name of the owner of the directory.
+
+The web server needs to have PHP enabled. This is a very common script
+processor, and most likely already present in the machine you intend
+to use: if not, you have to install it or have the system
+administrator install it. Note that it is only required to save the
+grades of students.
+
+
+2. Installation
+
+Installation and use cannot possibly be simpler. Just drop all files
+in the GitHub repository from which you have obtained this file into
+the place chosen. Notice that the repository BayesSim has two
+branches, 'master' and 'english'. The first is localised in Spanish,
+the second in English: pick the one which best suits you.
+
+Strictly, you only need files,
+
+    client.htm
+    backend.php
+    battleship.png
+    sub.png
+
+If your web server is picky, you might have to rename file
+ 'client.htm' to 'client.html'.
+
+3. Customization
+
+Once the files aboved are inplace, you are all set. However, you might
+wnat to change some detail. All code having to do with the simulator
+is in file 'client.htm'. You migh want to change:
+
+   a) Labels and messages: "Last search:", "Correct", etc. in lines
+      33-38.
+
+   b) The grid, increasing or reducing the number of sectors. This can
+      be changed in lines 71-110, but is not advised. Note the
+      latitudes and longitudes are "hard-wired" in the code.
+
+   c) The thresholds and colors of the sectors, in lines 135-139.
+   d) Labels of informative message when mouse over one sector, in
+      lines 144-146.
+   e) Probability of detection in one search (the 'p' of paper,
+      default is 0.6), in line 44.
+   f) Good bye message, line 373
+
+
+4. Grades
+
+
+When the student finds the lost submarine, his/her grade is the ratio
+of "right" to total searches, in a scale of 10 (this can also be
+changed: line 193). The script 'backend.php' is invoked which creates
+a file with the student ID as name, and the grade (and timestamp or
+name, if required) as content.
+
+This script  can be changed to anything, in particular to access a
+data base manager to store grades: this is of course site-dependent.
